@@ -1,24 +1,17 @@
 {
   lockedBalances: [
-    {
-      address: 'team.cheddar.near',
-      balance: 300000,
-      value: 1615.4820000000002,
-      test: '7105151924480399559965511969438'
-    },
+    { address: 'team.cheddar.near', balance: 300000, value: 1606.302 },
     {
       address: 'cheddar.sputnik-dao.near',
       balance: 933759.8065000001,
-      value: 5028.240532414111,
-      test: '7105151924480399559965511969438'
+      value: 4999.6674823352105
     },
     {
       address: 'contributors.cheddar.near',
       balance: 89661.47597092687,
-      value: 482.821668414883,
-      test: '7105151924480399559965511969438'
+      value: 480.07802725017257
     }
   ],
-  circulatingSupply: 1323421.2824709269,
-  lastUpdate: 1656017690093
+  circulatingSupply: 5781730.642009473,
+  lastUpdate: 1656017987016
 }
