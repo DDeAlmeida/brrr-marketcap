@@ -3,10 +3,10 @@
     { address: 'lockup.cheddar.near', balance: 0, value: 0 },
     {
       address: 'cheddar.sputnik-dao.near',
-      balance: 933759806500,
-      value: 4871107432.17629
+      balance: 9.337598065000001e-13,
+      value: 4.856820907136841e-15
     }
   ],
-  circulatingSupply: -933757506500,
-  lastUpdate: 1655993505159
+  circulatingSupply: 2300000,
+  lastUpdate: 1655994523135
 }
