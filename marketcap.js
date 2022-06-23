@@ -41,7 +41,8 @@ const updateMarketcap = async () => {
             return {
                 address,
                 balance: parsedBalance,
-                value: parsedBalance * tokenPrice
+                value: parsedBalance * tokenPrice,
+                test:total_supply
             };
         })
     )
@@ -49,7 +50,7 @@ const updateMarketcap = async () => {
     const circulatingSupply = sumLocked;
     if(!isNaN(circulatingSupply)) {
         marketCap.lockedBalances = lockedBalances;
-        marketCap.circulatingSupply = total_supply;
+        marketCap.circulatingSupply = circulatingSupply;
         marketCap.lastUpdate = new Date().getTime();
     }
 
