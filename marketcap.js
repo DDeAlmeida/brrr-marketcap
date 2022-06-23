@@ -32,22 +32,23 @@ const updateMarketcap = async () => {
     let tokenPrice = await getTokenPrice(tokenContractName);
     const near = await nearAPI.connect(config);
 
+    const accountSupply = await near.account('team.cheddar.near');
+    const total_supply = await accountSupply.viewFunction(tokenContractName, 'ft_total_supply')/Math.pow(10,24);
+
     const lockedBalances = await Promise.all(
         lockedHolders.map(async (address) => {
             const account = await near.account(address);
-            const ft_balance = await account.viewFunction(tokenContractName, 'ft_balance_of', {account_id: address})
-            const total_supply = await account.viewFunction(tokenContractName, 'ft_total_supply')
+            const ft_balance = await account.viewFunction(tokenContractName, 'ft_balance_of', {account_id: address});
             const parsedBalance = Number(ft_balance)/Math.pow(10,24);
             return {
                 address,
                 balance: parsedBalance,
-                value: parsedBalance * tokenPrice,
-                test:total_supply
+                value: parsedBalance * tokenPrice
             };
         })
     )
     const sumLocked = lockedBalances.reduce((acc, value) => acc+value.balance, 0);
-    const circulatingSupply = sumLocked;
+    const circulatingSupply = total_supply - sumLocked;
     if(!isNaN(circulatingSupply)) {
         marketCap.lockedBalances = lockedBalances;
         marketCap.circulatingSupply = circulatingSupply;
