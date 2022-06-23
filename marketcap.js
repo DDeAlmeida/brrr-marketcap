@@ -3,12 +3,14 @@ const nearAPI = require('near-api-js');
 
 const config = getConfig(process.env.NODE_ENV || 'production');
 
-// token account  
+// token account
 let tokenContractName = 'token.cheddar.near';
 // set all accounts with locked tokens
 const lockedHolders = ['team.cheddar.near', 'cheddar.sputnik-dao.near' , 'contributors.cheddar.near'];
 // token max supply
 const maxSupply = Math.pow(10, 24);
+//const nearSupply = await nearAPI.connect(config);
+const total_supply = await tokenContractName.viewFunction('ft_total_supply');
 
 const getTokenPrice = async (tokenId) => {
     return fetch("https://indexer.ref-finance.net/list-token-price")
