@@ -6,7 +6,7 @@ const config = getConfig(process.env.NODE_ENV || 'production');
 // token account  
 let tokenContractName = 'token.cheddar.near';
 // set all accounts with locked tokens
-const lockedHolders = ['lockup.cheddar.near', 'cheddar.sputnik-dao.near'];
+const lockedHolders = ['team.cheddar.near', 'cheddar.sputnik-dao.near' , 'contributors.cheddar.near'];
 // token max supply
 const maxSupply = Math.pow(10, 24);
 
