@@ -10,7 +10,7 @@ const lockedHolders = ['team.cheddar.near', 'cheddar.sputnik-dao.near' , 'contri
 // token max supply
 const maxSupply = Math.pow(10, 24);
 //const nearSupply = await nearAPI.connect(config);
-const total_supply = 10;//tokenContractName.viewFunction('ft_total_supply');
+//const total_supply = 10;//tokenContractName.viewFunction('ft_total_supply');
 
 const getTokenPrice = async (tokenId) => {
     return fetch("https://indexer.ref-finance.net/list-token-price")
@@ -36,7 +36,7 @@ const updateMarketcap = async () => {
         lockedHolders.map(async (address) => {
             const account = await near.account(address);
             const ft_balance = await account.viewFunction(tokenContractName, 'ft_balance_of', {account_id: address})
-            total_supply = await account.viewFunction(tokenContractName, 'ft_total_supply')
+            const total_supply = await account.viewFunction(tokenContractName, 'ft_total_supply')
             const parsedBalance = Number(ft_balance)/Math.pow(10,24);
             return {
                 address,
