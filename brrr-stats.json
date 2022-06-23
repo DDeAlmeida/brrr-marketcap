@@ -4,9 +4,9 @@
     {
       address: 'cheddar.sputnik-dao.near',
       balance: 933759806500,
-      value: 4971103769.854375
+      value: 4956817244.814925
     }
   ],
   circulatingSupply: -933757506500,
-  lastUpdate: 1655981848327
+  lastUpdate: 1655982929966
 }
