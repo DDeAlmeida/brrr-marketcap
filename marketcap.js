@@ -4,9 +4,9 @@ const nearAPI = require('near-api-js');
 const config = getConfig(process.env.NODE_ENV || 'production');
 
 // token account  
-let brrrToken = 'token.burrow.near';
+let brrrToken = 'token.cheddar.near';
 // set all accounts with locked tokens
-const brrrLockedHolders = ['lockup.burrow.near', 'burrow.sputnik-dao.near'];
+const brrrLockedHolders = ['lockup.cheddar.near', 'cheddar.sputnik-dao.near'];
 // token max supply
 const maxSupply = Math.pow(10, 9);
 
