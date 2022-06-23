@@ -4,9 +4,9 @@ const nearAPI = require('near-api-js');
 const config = getConfig(process.env.NODE_ENV || 'production');
 
 // token account  
-let brrrToken = 'token.cheddar.near';
+let token = 'token.cheddar.near';
 // set all accounts with locked tokens
-const brrrLockedHolders = ['lockup.cheddar.near', 'cheddar.sputnik-dao.near'];
+const lockedHolders = ['lockup.cheddar.near', 'cheddar.sputnik-dao.near'];
 // token max supply
 const maxSupply = Math.pow(10, 9);
 
@@ -27,13 +27,13 @@ const updateMarketcap = async () => {
         lastUpdate: 0
     }
 
-    let tokenPrice = await getTokenPrice(brrrToken);
+    let tokenPrice = await getTokenPrice(token);
     const near = await nearAPI.connect(config);
 
     const lockedBalances = await Promise.all(
-        brrrLockedHolders.map(async (address) => {
+        lockedHolders.map(async (address) => {
             const account = await near.account(address);
-            const ft_balance = await account.viewFunction(brrrToken, 'ft_balance_of', {account_id: address})
+            const ft_balance = await account.viewFunction(token, 'ft_balance_of', {account_id: address})
             const parsedBalance = Number(ft_balance)/Math.pow(10,18);
             return {
                 address,
