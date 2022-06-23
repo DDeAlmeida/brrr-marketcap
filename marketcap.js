@@ -35,7 +35,6 @@ const updateMarketcap = async () => {
             const account = await near.account(address);
             const ft_balance = await account.viewFunction(tokenContractName, 'ft_balance_of', {account_id: address})
             const parsedBalance = Number(ft_balance)/Math.pow(10,24);
-            //const parsedBalance = Number(ft_balance2)/Math.pow(10,18);
             return {
                 address,
                 balance: parsedBalance,
@@ -44,7 +43,7 @@ const updateMarketcap = async () => {
         })
     )
     const sumLocked = lockedBalances.reduce((acc, value) => acc+value.balance, 0);
-    const circulatingSupply = maxSupply-sumLocked;
+    const circulatingSupply = sumLocked;
     if(!isNaN(circulatingSupply)) {
         marketCap.lockedBalances = lockedBalances;
         marketCap.circulatingSupply = circulatingSupply;
