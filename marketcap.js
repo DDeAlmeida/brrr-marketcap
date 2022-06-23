@@ -8,7 +8,7 @@ let token = 'token.cheddar.near';
 // set all accounts with locked tokens
 const lockedHolders = ['lockup.cheddar.near', 'cheddar.sputnik-dao.near'];
 // token max supply
-const maxSupply = Math.pow(10, 9);
+const maxSupply = "2300000";
 
 const getTokenPrice = async (tokenId) => {
     return fetch("https://indexer.ref-finance.net/list-token-price")
