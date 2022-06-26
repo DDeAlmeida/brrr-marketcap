@@ -1,17 +1,17 @@
 {
   lockedBalances: [
-    { address: 'team.cheddar.near', balance: 300000, value: 1949.103 },
+    { address: 'team.cheddar.near', balance: 300000, value: 1911.966 },
     {
       address: 'cheddar.sputnik-dao.near',
       balance: 933759.8065000001,
-      value: 6066.646800428565
+      value: 5951.0566739819305
     },
     {
       address: 'contributors.cheddar.near',
       balance: 89661.47597092687,
-      value: 582.5315059978716
+      value: 571.4323118874305
     }
   ],
-  circulatingSupply: 5785146.691710353,
-  lastUpdate: 1656248298766
+  circulatingSupply: 5785400.982244087,
+  lastUpdate: 1656250009317
 }
